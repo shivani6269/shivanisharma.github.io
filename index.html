@@ -1,63 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your Name | Portfolio</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shivani Sharma (UI/UX Designer) — Product & Visual Design Portfolio</title>
+  
+  <!-- Google Fonts & Lucide Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<header>
-<nav>
-<h2>Your Name</h2>
-<ul>
-<li><a href="#about">About</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
-<div class="hero">
-<h1>Hi, I'm Your Name</h1>
-<p>UI/UX Designer & Front-End Developer</p>
-<a class="btn" href="#projects">View Projects</a>
-</div>
-</header>
 
-<section id="about">
-<h2>About Me</h2>
-<p>Replace this text with your professional summary.</p>
-</section>
+  <!-- Scroll Progress Indicator -->
+  <div id="progress-bar"></div>
 
-<section id="skills">
-<h2>Skills</h2>
-<div class="cards">
-<div class="card">Figma</div>
-<div class="card">Adobe XD</div>
-<div class="card">Angular</div>
-<div class="card">HTML</div>
-<div class="card">CSS</div>
-<div class="card">JavaScript</div>
-</div>
-</section>
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <div class="nav-container max-width">
+      <a href="#" class="logo">
+        <span class="logo-badge">SS</span>
+        <span class="logo-text">Shivani Sharma<span class="accent-dot">.</span></span>
+      </a>
 
-<section id="projects">
-<h2>Projects</h2>
-<div class="cards">
-<div class="card"><h3>Project One</h3><p>Description here.</p></div>
-<div class="card"><h3>Project Two</h3><p>Description here.</p></div>
-<div class="card"><h3>Project Three</h3><p>Description here.</p></div>
-</div>
-</section>
+      <div class="nav-links">
+        <a href="#work">Featured Work</a>
+        <a href="#more">But Wait, There's More!</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
 
-<section id="contact">
-<h2>Contact</h2>
-<p>Email: you@example.com</p>
-<p>GitHub: https://github.com/yourusername</p>
-<p>LinkedIn: https://linkedin.com/in/yourprofile</p>
-</section>
+      <div class="nav-actions">
+        <button id="theme-toggle" aria-label="Toggle Theme" class="theme-btn icon-btn">
+          <i data-lucide="moon" id="theme-icon"></i>
+        </button>
+        <button id="mobile-menu-btn" class="mobile-only icon-btn" aria-label="Toggle Menu">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
 
-<footer>© 2026 Your Name</footer>
-<script src="script.js"></script>
+    <!-- Mobile Nav -->
+    <div id="mobile-menu" class="mobile-menu">
+      <a href="#work" class="mobile-link">Featured Work</a>
+      <a href="#more" class="mobile-link">But Wait, There's More!</a>
+      <a href="#about" class="mobile-link">About</a>
+      <a href="#contact" class="mobile-link">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero max-width">
+    <div class="hero-content">
+      <div class="badge">
+        <i data-lucide="sparkles"></i> Product Designer & Visual Storyteller
+      </div>
+      <h1>Designing complex enterprise apps by day. Painting pixels by night.</h1>
+      <p class="hero-desc">
+        I specialize in turning intricate workflows—like vendor management and direct sourcing—into seamless, human-centric web and mobile experiences. Powered by research, Figma prototyping, and a passion for visual art.
+      </p>
+      <div class="hero-actions">
+        <a href="#work" class="btn btn-primary">Explore Work <i data-lucide="arrow-down"></i></a>
+        <a href="#more" class="btn btn-accent">But Wait, There's More! <i data-lucide="party-popper"></i></a>
+        <a href="#contact" class="btn btn-outline">Let's Talk <i data-lucide="message-square"></i></a>
+      </div>
+    </div>
+    
+    <div class="hero-visual">
+      <div class="glass-card main-card">
+        <div class="card-tag"><i data-lucide="layers"></i> Enterprise UX</div>
+        <h3>XRM & Direct Sourcing Platforms</h3>
+        <p>3 Production Apps Launched</p>
+      </div>
+      <div class="glass-card side-card-1">
+        <i data-lucide="palette"></i> Procreate Digital Art
+      </div>
+      <div class="glass-card side-card-2">
+        <i data-lucide="mic"></i> Public Speaking & Pitching
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED WORK SECTION -->
+  <section id="work" class="section bg-alt">
+    <div class="max-width">
+      <div class="section-header">
+        <span class="section-tag">Production Projects</span>
+        <h2>Enterprise Work & SaaS Products</h2>
+        <p class="section-sub">Real-world applications engineered at scale for Acrocorp XRM ecosystem.</p>
+      </div>
+
+      <div id="projects-grid" class="projects-grid">
+        <!-- Dynamically populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- "BUT WAIT, THERE'S MORE!" SECTION (Havana Nguyen Inspired) -->
+  <section id="more" class="section max-width">
+    <div class="section-header highlight-header">
+      <div class="fun-badge"><i data-lucide="smile"></i> Havana Nguyen Style Playground</div>
+      <h2>"But wait, there’s more..."</h2>
+      <p class="section-sub">Beyond my day job in enterprise SaaS, here is my creative playground—digital paintings, self-initiated Figma explorations, and public speaking.</p>
+    </div>
+
+    <!-- Sub-tabs for "There's More" -->
+    <div class="tabs-container">
+      <button class="tab-btn active" data-tab="procreate"><i data-lucide="palette"></i> Procreate Artwork</button>
+      <button class="tab-btn" data-tab="figma"><i data-lucide="figma"></i> Figma Prototypes & Study</button>
+      <button class="tab-btn" data-tab="speaking"><i data-lucide="mic"></i> Public Speaking & Presentation</button>
+    </div>
+
+    <!-- Playground Content Area -->
+    <div id="playground-content" class="playground-content">
+      <!-- Populated via JS -->
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="section bg-alt">
+    <div class="max-width">
+      <div class="about-grid">
+        <div class="about-text">
+          <span class="section-tag">About Me</span>
+          <h2>Blending Analytical Thinking with Creative Expression</h2>
+          <p>Working on complex B2B platforms like XRM (Extended Resource Management) and Direct Sourcing taught me how to untangle dense data, handle strict permissions, and make heavy workflows feel light and intuitive.</p>
+          <p>My strength lies in cross-functional communication—articulating design rationale clearly to engineers, product managers, and business leads. When I'm not designing in Figma, you'll find me sketching on Procreate or practicing public speaking!</p>
+          
+          <div class="skills-chips">
+            <span>Figma Prototyping</span>
+            <span>User Flow Architecture</span>
+            <span>Enterprise UX</span>
+            <span>Procreate Illustration</span>
+            <span>Public Speaking</span>
+            <span>Design Systems</span>
+            <span>Micro-interactions</span>
+          </div>
+        </div>
+
+        <div class="stats-column">
+          <div class="stat-card">
+            <span class="stat-num">3+</span>
+            <span class="stat-label">Production Platforms Shipped</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">10+</span>
+            <span class="stat-label">Figma Self-Study Concepts</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">Passion for Visual Arts & Design</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="section max-width">
+    <div class="section-header">
+      <span class="section-tag">Connect</span>
+      <h2>Let’s create something amazing together!</h2>
+      <p class="section-sub">Whether you want to discuss enterprise UX, look at Procreate artwork, or talk design strategy.</p>
+    </div>
+
+    <div class="contact-box">
+      <div class="contact-info">
+        <h3>Get in Touch</h3>
+        <p>I'm always open to discussing new opportunities, design feedback, or creative collaborations.</p>
+        
+        <div class="contact-links">
+          <a href="mailto:your.email@example.com" class="contact-item"><i data-lucide="mail"></i> Email Me</a>
+          <a href="https://linkedin.com" target="_blank" class="contact-item"><i data-lucide="linkedin"></i> LinkedIn</a>
+          <a href="https://dribbble.com" target="_blank" class="contact-item"><i data-lucide="dribbble"></i> Dribbble / Portfolio</a>
+        </div>
+      </div>
+
+      <form id="contact-form" class="contact-form" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" placeholder="Your Name" required />
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="your@email.com" required />
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea rows="4" placeholder="Hi! I'd love to chat about your designs..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message <i data-lucide="send"></i></button>
+      </form>
+    </div>
+  </section>
+  
+  <section id="contact" class="section max-width">
+    <div class="section-header">
+      <span class="section-tag">Get In Touch</span>
+      <h2>Let's Build Something Great</h2>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Contact Information</h3>
+        <div class="info-list">
+          <div class="info-item"><i data-lucide="mail"></i> <span>alex.morgan.design@example.com</span></div>
+          <div class="info-item"><i data-lucide="phone"></i> <span>+1 (555) 234-5678</span></div>
+          <div class="info-item"><i data-lucide="map-pin"></i> <span>San Francisco, CA / Remote</span></div>
+        </div>
+
+        <h3 style="margin-top: 2rem;">Social Profiles</h3>
+        <div class="social-links">
+          <a href="#" class="social-btn"><i data-lucide="linkedin"></i></a>
+          <a href="#" class="social-btn"><i data-lucide="dribbble"></i></a>
+          <a href="#" class="social-btn"><i data-lucide="github"></i></a>
+        </div>
+      </div>
+
+      <form id="contact-form" class="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" placeholder="Jane Doe" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" placeholder="jane@example.com" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" placeholder="Project Inquiry" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" rows="4" placeholder="Tell me about your product requirements..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary w-full">Send Message <i data-lucide="send"></i></button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="max-width footer-content">
+      <p>© 2026 UI/UX Portfolio. Built with focus on storytelling & user-centric design.</p>
+      <button id="back-to-top" class="btn-text">Back to Top <i data-lucide="chevron-up"></i></button>
+    </div>
+  </footer>
+
+  <!-- CASE STUDY & PREVIEW MODAL -->
+  <div id="modal" class="modal-overlay">
+    <div class="modal-card">
+      <button id="modal-close" class="modal-close"><i data-lucide="x"></i></button>
+      <span id="modal-tag" class="section-tag">Case Study</span>
+      <h3 id="modal-title">Project Title</h3>
+      
+      <div id="modal-meta" class="modal-meta">
+        <!-- Metadata -->
+      </div>
+      
+      <div id="modal-body" class="modal-body">
+        <!-- Content -->
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
