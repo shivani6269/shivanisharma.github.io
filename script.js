@@ -295,20 +295,33 @@ function setupBackToTop() {
   });
 }
 
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-  event.preventDefault();
+document.addEventListener('DOMContentLoaded', () => {
+  // Initialize EmailJS inside DOMContentLoaded
+  emailjs.init({
+    publicKey: "vn1tvgFiZS_Ms46kC", // Replace with your actual Public Key
+  });
 
-  const btn = event.target.querySelector('button[type="submit"]');
-  btn.innerText = 'Sending...';
+  const contactForm = document.getElementById('contact-form');
+  const submitBtn = document.getElementById('submit-btn');
 
-  // Send form using EmailJS
-  emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
-    .then(function() {
-      alert('Message sent successfully!');
-      btn.innerText = 'Send Message';
-      document.getElementById('contact-form').reset();
-    }, function(error) {
-      alert('Failed to send message: ' + JSON.stringify(error));
-      btn.innerText = 'Send Message';
-    });
+  if (!contactForm) return;
+
+  contactForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    document.getElementById('time').value = new Date().toLocaleString();
+    submitBtn.innerText = 'Sending...';
+
+    emailjs.sendForm('service_tamtzj2', 'template_468693g', this)
+      .then(() => {
+        alert('Message sent successfully!');
+        contactForm.reset();
+      })
+      .catch((error) => {
+        alert('Failed to send message: ' + JSON.stringify(error));
+      })
+      .finally(() => {
+        submitBtn.innerHTML = 'Send Message <i data-lucide="send"></i>';
+      });
+  });
 });
