@@ -640,7 +640,7 @@ body {
 }
 
 /* --- CONTACT --- */
-.contact-box {
+/* .contact-box {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   gap: 3.5rem;
@@ -715,7 +715,8 @@ body {
 
 .form-group input:focus, .form-group textarea:focus {
   outline: 2px solid var(--primary);
-}
+} */
+ 
 /* --- CONTACT --- */
 .contact-grid {
   display: grid;

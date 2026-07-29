@@ -59,22 +59,22 @@ const PLAYGROUND = {
   ],
   figma: [
     {
-      title: 'Smart Home IoT Controller UI',
-      type: 'Self-Practice Prototype',
-      desc: 'Interactive Figma prototype testing glassmorphism, fluid dark mode transitions, and slider components.',
-      link: 'https://www.figma.com/proto/5tabpNcYkAqSAu1u39TcfG/Work-Designs?node-id=96-131&t=dGxn17lRXiWkcu1v-0&scaling=scale-down&content-scaling=fixed&page-id=74%253A38&starting-point-node-id=96%253A131&show-proto-s'
+      title: 'Work Designs & Motion Studies',
+      type: 'Prototype & Motion',
+      desc: 'Testing smart-animate transitions, interactive component states, and subtle UI motion to enhance user feedback.',
+      link: 'https://www.figma.com/proto/5tabpNcYkAqSAu1u39TcfG/Work-Designs?node-id=96-131&t=dGxn17lRXiWkcu1v-0&scaling=scale-down&content-scaling=fixed&page-id=74%253A38&starting-point-node-id=96%3A131&show-proto-s=&show-proto-sidebar=1'
     },
     {
-      title: 'Fintech Micro-interaction Study',
-      type: 'Figma Animation',
-      desc: 'Explorations in Figma Smart Animate: smooth card expansion, haptic feedback visualizers, and state shifts.',
-      link: 'https://www.figma.com/proto/fTwyuWIa9ym1nAydXXvatf/Project?node-id=2012-2071&t=JTX9yESKe2TlGHYB-0&scaling=scale-down&content-scaling=fixed&page-id=2009%3A2&starting-point-node-id=2012%3A2071&show-proto-sidebar=1'
+      title: 'Primary Application Prototype',
+      type: 'Mobile Flow Prototype',
+      desc: 'A complete multi-screen user flow highlighting core app features, focusing on user architecture, modal paths, and high-fidelity screen transitions.',
+      link: 'https://www.figma.com/proto/fTwyuWIa9ym1nAydXXvatf/Project?node-id=2012-2071&t=JTX9yESKe2TlGHYB-0&scaling=scale-down&content-scaling=fixed&page-id=2009%3A2&starting-point-node-id=2012%3A2071'
     },
     {
-      title: 'Minimalist E-Commerce Design System',
-      type: 'UI Component Library',
-      desc: 'Built a 40+ component Figma UI kit with auto-layout v5, variant properties, and strict accessibility ratios.',
-      link: 'https://www.figma.com/proto/fTwyuWIa9ym1nAydXXvatf/Project?node-id=2098-1620&t=JTX9yESKe2TlGHYB-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1'    
+      title: 'Feature Module & UI States Exploration',
+      type: 'Feature Prototype',
+      desc: 'Deep-dive into specific task workflows, testing dynamic card interactions, state changes, and overlay modal behaviors.',
+      link: 'https://www.figma.com/proto/fTwyuWIa9ym1nAydXXvatf/Project?node-id=2098-1057&t=JTX9yESKe2TlGHYB-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1'
     }
   ],
   speaking: [
