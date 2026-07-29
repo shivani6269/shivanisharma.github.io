@@ -68,13 +68,13 @@ const PLAYGROUND = {
       title: 'Fintech Micro-interaction Study',
       type: 'Figma Animation',
       desc: 'Explorations in Figma Smart Animate: smooth card expansion, haptic feedback visualizers, and state shifts.',
-      link: '#'
+      link: 'https://www.figma.com/proto/fTwyuWIa9ym1nAydXXvatf/Project?node-id=2012-2071&t=JTX9yESKe2TlGHYB-0&scaling=scale-down&content-scaling=fixed&page-id=2009%3A2&starting-point-node-id=2012%3A2071&show-proto-sidebar=1'
     },
     {
       title: 'Minimalist E-Commerce Design System',
       type: 'UI Component Library',
       desc: 'Built a 40+ component Figma UI kit with auto-layout v5, variant properties, and strict accessibility ratios.',
-      link: '#'
+      link: 'https://www.figma.com/proto/fTwyuWIa9ym1nAydXXvatf/Project?node-id=2098-1620&t=JTX9yESKe2TlGHYB-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1'    
     }
   ],
   speaking: [
@@ -168,6 +168,7 @@ function renderProjects() {
 // --- TABS & PLAYGROUND RENDER ---
 function setupTabs() {
   const btns = document.querySelectorAll('.tab-btn');
+  console.log(btns);
   btns.forEach(btn => {
     btn.addEventListener('click', (e) => {
       btns.forEach(b => b.classList.remove('active'));
@@ -208,9 +209,9 @@ function renderPlayground(tab) {
             </div>
             <h4>${item.title}</h4>
             <p style="font-size:0.85rem; color:var(--text-muted);">${item.desc}</p>
-            <button class="btn btn-outline" style="margin-top:auto;" onclick="${item.linkurl}">
+            <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="margin-top:auto; text-decoration:none; display:inline-flex; align-items:center; gap:0.5rem;">
               Launch Figma Preview <i data-lucide="play"></i>
-            </button>
+            </a>
           </div>
         `).join('')}
       </div>
@@ -293,3 +294,21 @@ function setupBackToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
+
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const btn = event.target.querySelector('button[type="submit"]');
+  btn.innerText = 'Sending...';
+
+  // Send form using EmailJS
+  emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+    .then(function() {
+      alert('Message sent successfully!');
+      btn.innerText = 'Send Message';
+      document.getElementById('contact-form').reset();
+    }, function(error) {
+      alert('Failed to send message: ' + JSON.stringify(error));
+      btn.innerText = 'Send Message';
+    });
+});
