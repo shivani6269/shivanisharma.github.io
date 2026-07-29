@@ -16,7 +16,7 @@ const PROJECTS = [
     title: 'XRM Mobile Application',
     category: 'iOS & Android App',
     bgImage: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80',
-    link: 'https://nvxrm-testing.acrocorp.com/qa_ui/auth/login',
+    link: 'https://play.google.com/store/apps/details?id=com.acroxrm.AcroTrac3',
     summary: 'Mobile companion app for managers and field contractors to submit timecards, review pending requisitions, and receive real-time status alerts.',
     role: 'Lead Mobile UI/UX',
     impact: 'Improved mobile approval velocity by enabling 1-tap manager sign-offs.',
