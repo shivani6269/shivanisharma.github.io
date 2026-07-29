@@ -595,6 +595,10 @@ body {
   margin-top: 1rem;
 }
 
+.about-text .section-tag{
+    font-size: 28px;
+}
+
 .skills-chips {
   display: flex;
   flex-wrap: wrap;
